@@ -33,6 +33,8 @@ def create_contexts_target(corpus,window_size = 1):
 
         contexts.append(cs)
         return np.array(contexts),np.array(target)
+    
+
 
 #말뭉치 자체를 원핫으로 변경
 def convert_one_hot(corpus, vocab_size):
