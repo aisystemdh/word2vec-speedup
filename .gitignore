@@ -1,0 +1,19 @@
+.venv-test/
+
+# 파이썬 실행 캐시들
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.ipynb_checkpoints/
+
+#PTB dataset
+data/
+artifacts/checkpoints/
+artifacts/embeddings/
+artifacts/reports/
+*.npz
+*.npy
+
+#개인 설정 폴더
+.vscode/
+.idea/
