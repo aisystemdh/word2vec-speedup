@@ -33,4 +33,19 @@ def create_contexts_target(corpus,window_size = 1):
 
         contexts.append(cs)
         return np.array(contexts),np.array(target)
-    
+
+#말뭉치 자체를 원핫으로 변경
+def convert_one_hot(corpus, vocab_size):
+    corpus = np.asarray(corpus)
+    return np.eye(vocab_size, dtype=np.int32)[corpus]
+
+
+
+#맥락과 타깃을 원 핫으로 변경하는 함수 , vocab_size = len(word_to_id)
+def create_one_hot_contexts_target(corpus, vocab_size, window_size=1):
+    contexts, target = create_contexts_target(corpus, window_size)
+
+    contexts = convert_one_hot(contexts, vocab_size)
+    target = convert_one_hot(target, vocab_size)
+
+    return contexts, target
